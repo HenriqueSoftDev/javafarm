@@ -6,39 +6,6 @@ public class Cenoura {
     private int tempoDeVida;
     private int tempoDeCrescimento;
 
-    //Getters
-    public int getTamanho() {
-        return tamanho;
-    }
-
-    public int getTempoDeVida() {
-        return tempoDeVida;
-    }
-
-    public int getTempoDeCrescimento() {
-        return tempoDeCrescimento;
-    }
-
-    //Setters
-    public void setTamanho(int tamanho) {
-        this.tamanho = tamanho;
-    }
-
-    public void setTempoDeVida(int tempoDeVida) {
-        this.tempoDeVida = tempoDeVida;
-    }
-
-    public void setTempoDeCrescimento(int tempoDeCrescimento) {
-        this.tempoDeCrescimento = tempoDeCrescimento;
-    }
-
-    //Constructor
-    public Cenoura(int tamanho, int tempoDeVida, int tempoDeCrescimento) {
-        this.tamanho = tamanho;
-        this.tempoDeVida = tempoDeVida;
-        this.tempoDeCrescimento = tempoDeCrescimento;
-    }
-
     //Métodos
     public void crescer() {
 
@@ -62,6 +29,19 @@ public class Cenoura {
 
     public String getImage() {
         return "images/cenoura" + "tamanho" + ".png";
+    }
+
+    //Getters
+    public int getTamanho() {
+        return tamanho;
+    }
+
+    public int getTempoDeVida() {
+        return tempoDeVida;
+    }
+
+    public int getTempoDeCrescimento() {
+        return tempoDeCrescimento;
     }
 
 }
