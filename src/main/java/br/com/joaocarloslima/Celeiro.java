@@ -62,7 +62,7 @@ public class Celeiro {
     }
 
     public boolean celeiroCheio() {
-        return getEspacoDisponivel() == capacidade;
+        return getEspacoDisponivel() <= 1;
     }
 
     //Getters
