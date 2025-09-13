@@ -2,10 +2,68 @@ package br.com.joaocarloslima;
 
 public class Celeiro {
 
-    private int capacidade;
+    private int capacidade = 200;
     private int qtdeBatatas;
     private int qtdeCenouras;
     private int qtdeMorangos;
+
+    //Métodos de armazenamento
+    public void armazenaBatata() {
+        if (celeiroCheio()) {
+            throw new RuntimeException("Não foi possível armazenar batatas.. O celeiro está cheio!");
+        }
+        qtdeBatatas += 2;
+    }
+
+    public void armazenaCenoura() {
+        if (celeiroCheio()) {
+            throw new RuntimeException("Não foi possível armazenar cenouras.. O celeiro está cheio!");
+        }
+        qtdeCenouras += 2;
+
+    }
+
+    public void armazenaMorango() {
+        if (celeiroCheio()) {
+            throw new RuntimeException("Não foi possível armazenar cenouras.. O celeiro está cheio!");
+        }
+        qtdeMorangos += 2;
+    }
+
+    //Métodos de consumo dos produtos
+    public void consumirBatata() {
+        if (qtdeBatatas <= 0) {
+            throw new RuntimeException("Não há mais batatas para consumir..");
+        }
+        qtdeBatatas--;
+    }
+
+    public void consumirCenoura() {
+        if (qtdeCenouras <= 0) {
+            throw new RuntimeException("Não há mais cenouras para consumir..");
+        }
+        qtdeCenouras--;
+    }
+
+    public void consumirMorango() {
+        if (qtdeMorangos <= 0) {
+            throw new RuntimeException("Não há mais morangos para consumir..");
+        }
+        qtdeMorangos--;
+    }
+
+    public int getEspacoDisponivel() {
+        return capacidade - (qtdeBatatas + qtdeMorangos + qtdeCenouras);
+    }
+
+    public double getOcupacao() {
+        double porcentagem = (qtdeMorangos + qtdeCenouras + qtdeBatatas) * 100/200;
+        return porcentagem;
+    }
+
+    public boolean celeiroCheio() {
+        return getEspacoDisponivel() == capacidade;
+    }
 
     //Getters
     public int getCapacidade() {
@@ -18,48 +76,6 @@ public class Celeiro {
 
     public int getQtdeCenouras() {
         return qtdeCenouras;
-    }
-
-    //Métodos de armazenamento
-    public void armazenaBatata(){
-        if (capacidade)
-        qtdeBatatas += 2;
-        capacidade += 2;
-    }
-
-    public void armazenaCenoura(){
-        qtdeCenouras += 2;
-        capacidade += 2;
-    }
-
-    public void armazenaMorango(){
-        qtdeMorangos++;
-        capacidade += 2;
-    }
-
-    //Métodos de consumo dos produtos
-    public void consumirBatata(){
-        qtdeBatatas--;
-    }
-
-    public void consumirCenoura(){
-        qtdeCenouras--;
-    }
-    public void consumirMorango(){
-        qtdeMorangos--;
-    }
-
-    //
-    public int getEspacoDisponivel(){
-
-    }
-
-    public int getOcupacao(){
-
-    }
-
-    public boolean celeiroCheio(){
-
     }
 
 }
