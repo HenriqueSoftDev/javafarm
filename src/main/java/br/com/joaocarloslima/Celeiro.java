@@ -57,8 +57,7 @@ public class Celeiro {
     }
 
     public double getOcupacao() {
-        double porcentagem = (qtdeMorangos + qtdeCenouras + qtdeBatatas) * 100/200;
-        return porcentagem;
+        return (qtdeMorangos + qtdeCenouras + qtdeBatatas) * 100/200;
     }
 
     public boolean celeiroCheio() {
@@ -76,6 +75,10 @@ public class Celeiro {
 
     public int getQtdeCenouras() {
         return qtdeCenouras;
+    }
+
+    public int getQtdeMorangos() {
+        return qtdeMorangos;
     }
 
 }
