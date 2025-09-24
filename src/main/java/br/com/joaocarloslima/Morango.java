@@ -21,14 +21,11 @@ public class Morango {
     }
 
     public boolean podeColher() {
-        if (tamanho == 4) {
-            return true;
-        }
-        return false;
+        return tamanho == 4;
     }
 
-    public String getImage() {
-        return "images/morango" + "tamanho" + ".png";
+    public String getImagem() {
+        return "images/morango" + tamanho + ".png";
     }
 
     //Getters

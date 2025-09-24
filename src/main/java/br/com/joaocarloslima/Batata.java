@@ -7,6 +7,7 @@ public class Batata {
     private int tempoDeCrescimento = 3;
 
     public void crescer(){
+
         tempoDeVida++;
 
         if(tempoDeVida == tempoDeCrescimento){
@@ -19,6 +20,7 @@ public class Batata {
     public boolean podeColher(){
         return tamanho == 4;
     }
+
     public String getImagem(){
         return "images/batata" + tamanho + ".png";
     }

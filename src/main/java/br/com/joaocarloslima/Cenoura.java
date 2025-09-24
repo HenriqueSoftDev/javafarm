@@ -2,9 +2,9 @@ package br.com.joaocarloslima;
 
 public class Cenoura {
 
-    private int tamanho;
-    private int tempoDeVida;
-    private int tempoDeCrescimento;
+    private int tamanho = 1;
+    private int tempoDeVida = 1;
+    private int tempoDeCrescimento = 3;
 
     //Métodos
     public void crescer() {
@@ -21,14 +21,11 @@ public class Cenoura {
     }
 
     public boolean podeColher() {
-        if (tamanho == 4) {
-            return true;
-        }
-        return false;
+        return tamanho == 4;
     }
 
-    public String getImage() {
-        return "images/cenoura" + "tamanho" + ".png";
+    public String getImagem() {
+        return "images/cenoura" + tamanho + ".png";
     }
 
     //Getters
