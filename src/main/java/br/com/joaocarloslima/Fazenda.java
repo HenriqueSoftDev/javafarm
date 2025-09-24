@@ -1,5 +1,6 @@
 package br.com.joaocarloslima;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fazenda {
@@ -8,6 +9,9 @@ public class Fazenda {
     private Celeiro celeiro;
 
     public Fazenda() {
+        terreno = new ArrayList<>();
+        celeiro = new Celeiro();
+
         for (int x = 0; x <= 13; x++) {
             for (int y = 0; y <= 13; y++) {
                 terreno.add(new Terreno(x, y));
@@ -17,25 +21,34 @@ public class Fazenda {
 
     public void plantarBatata(int x, int y) {
         if (celeiro.getQtdeBatatas() > 0) {
-            Terreno batata = getTerrenos(x, y);
-            batata.plantar(new Batata());
-            celeiro.consumirBatata();
+            Terreno ocupado = getTerrenos(x, y);
+            if (!ocupado.estaOcupado()){
+                Terreno batata = getTerrenos(x, y);
+                batata.plantar(new Batata());
+                celeiro.consumirBatata();
+            }
         }
     }
 
     public void plantarCenoura(int x, int y) {
         if (celeiro.getQtdeCenouras() > 0) {
-            Terreno cenoura = getTerrenos(x, y);
-            cenoura.plantar(new Cenoura());
-            celeiro.consumirCenoura();
+            Terreno ocupado = getTerrenos(x, y);
+            if (!ocupado.estaOcupado()){
+                Terreno cenoura = getTerrenos(x, y);
+                cenoura.plantar(new Cenoura());
+                celeiro.consumirCenoura();
+            }
         }
     }
 
     public void plantarMorango(int x, int y) {
         if (celeiro.getQtdeMorangos() > 0) {
-            Terreno morango = getTerrenos(x, y);
-            morango.plantar(new Morango());
-            celeiro.consumirMorango();
+            Terreno ocupado = getTerrenos(x, y);
+            if (!ocupado.estaOcupado()){
+                Terreno morango = getTerrenos(x, y);
+                morango.plantar(new Morango());
+                celeiro.consumirMorango();
+            }
         }
     }
 
@@ -47,6 +60,13 @@ public class Fazenda {
             }
         }
         return null;
+    }
+
+    public void colher(int x, int y){
+        Terreno colher = getTerrenos(x, y);
+        if (colher != null){
+            colher.colher(celeiro);
+        }
     }
 
     public Celeiro getCeleiro() {
