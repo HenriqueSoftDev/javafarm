@@ -2,10 +2,10 @@ package br.com.joaocarloslima;
 
 public class Celeiro {
 
-    private int capacidade = 200;
-    private int qtdeBatatas;
-    private int qtdeCenouras;
-    private int qtdeMorangos;
+    private int capacidade = 1000;
+    private int qtdeBatatas = 10;
+    private int qtdeCenouras = 10;
+    private int qtdeMorangos = 10;
 
     //Métodos de armazenamento
     public void armazenaBatata() {

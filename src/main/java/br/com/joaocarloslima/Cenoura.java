@@ -21,7 +21,7 @@ public class Cenoura {
     }
 
     public boolean podeColher() {
-        return tamanho == 4;
+        return getTamanho() == 4;
     }
 
     public String getImagem() {
