@@ -2,7 +2,7 @@ package br.com.joaocarloslima;
 
 public class Celeiro {
 
-    private int capacidade = 1000;
+    private int capacidade = 50;
     private int qtdeBatatas = 10;
     private int qtdeCenouras = 10;
     private int qtdeMorangos = 10;
@@ -57,11 +57,11 @@ public class Celeiro {
     }
 
     public double getOcupacao() {
-        return (qtdeMorangos + qtdeCenouras + qtdeBatatas) * 100/200;
+        return (double) (qtdeMorangos + qtdeCenouras + qtdeBatatas) / capacidade;
     }
 
     public boolean celeiroCheio() {
-        return getEspacoDisponivel() <= 1;
+        return getOcupacao() == getEspacoDisponivel();
     }
 
     //Getters
