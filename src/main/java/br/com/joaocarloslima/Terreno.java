@@ -24,16 +24,16 @@ public class Terreno {
 
     public void colher(Celeiro celeiro){
         if (batata != null && batata.podeColher()){
-            batata = null;
             celeiro.armazenaBatata();
+            batata = null;
         }
         if (cenoura != null && cenoura.podeColher()){
-            cenoura = null;
             celeiro.armazenaCenoura();
+            cenoura = null;
         }
         if (morango != null && morango.podeColher()){
-            morango = null;
             celeiro.armazenaMorango();
+            morango = null;
         }
     }
 

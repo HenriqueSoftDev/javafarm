@@ -25,7 +25,7 @@ public class Celeiro {
 
     public void armazenaMorango() {
         if (celeiroCheio()) {
-            throw new RuntimeException("Não foi possível armazenar cenouras.. O celeiro está cheio!");
+            throw new RuntimeException("Não foi possível armazenar morangos.. O celeiro está cheio!");
         }
         qtdeMorangos += 2;
     }
@@ -61,7 +61,7 @@ public class Celeiro {
     }
 
     public boolean celeiroCheio() {
-        return getOcupacao() == getEspacoDisponivel();
+        return getEspacoDisponivel() < 2;
     }
 
     //Getters
